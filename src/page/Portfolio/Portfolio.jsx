@@ -6,7 +6,7 @@ import LIImage from "../../assets/image/portfolio/Market Intelligence/1.png";
 import PayrollImage from "../../assets/image/portfolio/Payroll/Common Code.jpg";
 import EmotionImage from "../../assets/image/portfolio/App Emotion Recog.jpg";
 import BPJPHImage from "../../assets/image/portfolio/BPJPH/1.png";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Portfolio = () => {
   const navigate = useNavigate();

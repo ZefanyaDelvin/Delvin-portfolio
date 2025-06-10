@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./page/Main.jsx/MainPage";
 import Portfolio from "./page/Portfolio/Portfolio";
 import ATS from "./page/PortfolioCollection/ATS";
