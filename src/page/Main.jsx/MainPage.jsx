@@ -1,7 +1,10 @@
 import MainLayout from "../../layouts/MainLayout";
 import DelvinImage from "../../assets/image/main/Vin2.jpg";
+import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
+  const navigate = useNavigate();
+
   return (
     <MainLayout>
       <div className="w-full px-4 sm:px-8 md:px-16 lg:px-20 mt-5">
@@ -47,7 +50,7 @@ const MainPage = () => {
             className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition duration-300"
             type="button"
             onClick={() => {
-              window.location.href = "/portfolio";
+              navigate("/portfolio");
             }}
           >
             Explore
