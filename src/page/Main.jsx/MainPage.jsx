@@ -1,9 +1,41 @@
 import MainLayout from "../../layouts/MainLayout";
 import DelvinImage from "../../assets/image/main/Vin2.jpg";
 import { useNavigate } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const MainPage = () => {
   const navigate = useNavigate();
+
+  const languages = [
+    {
+      text: "English",
+      rating: 4,
+      desc: "Advanced",
+    },
+    {
+      text: "Indonesia",
+      rating: 5,
+      desc: "Proficient",
+    },
+  ];
+
+  const iconList = [
+    { icon: "material-icon-theme:figma", label: "Figma" },
+    { icon: "logos:react", label: "ReactJS" },
+    { icon: "material-icon-theme:kotlin", label: "Kotlin" },
+    { icon: "vscode-icons:file-type-cpp3", label: "C++" },
+    { icon: "file-icons:tortoisesvn", label: "SVN" },
+    { icon: "material-icon-theme:git", label: "Git" },
+    { icon: "logos:tableau-icon", label: "Tableau" },
+    { icon: "logos:java", label: "Java" },
+    { icon: "vscode-icons:file-type-c", label: "C" },
+    { icon: "logos:nodejs", label: "NodeJS" },
+    { icon: "logos:redux", label: "Redux" },
+    { icon: "logos:javascript", label: "Javascript" },
+    { icon: "vscode-icons:file-type-css", label: "CSS" },
+    { icon: "simple-icons:express", label: "Express" },
+  ];
 
   return (
     <MainLayout>
@@ -35,6 +67,39 @@ const MainPage = () => {
               about technology, always eager to learn new things, and committed
               to continuous improvement through meaningful experiences.
             </p>
+          </div>
+        </section>
+
+        {/* My Skills */}
+        <section className="w-full py-12 bg-black text-white text-center mt-5 mb-5">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">My Skills</h2>
+          {/* Other Skills */}
+          {/* Programming and Tools Icons */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center mb-12 px-6">
+            {iconList.map(({ icon, label }, index) => (
+              <div key={index} className="relative group">
+                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gray-700 shadow-md transition-transform hover:scale-105">
+                  <Icon icon={icon} width="36" height="36" />
+                </div>
+                <div className="absolute bottom-[-25px] left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all bg-black text-white text-xs px-2 py-1 rounded shadow-md whitespace-nowrap">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Languages */}
+          <div className="flex flex-col items-center gap-3">
+            {languages.map(({ text, rating, desc }) => (
+              <div className="flex flex-col sm:flex-row gap-2 items-center">
+                <span className="font-semibold">{text}</span>
+                <div className="flex text-yellow-400">
+                  {[...Array(rating)].map((_, i) => (
+                    <AiFillStar key={i} />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-400">{`${desc}`}</span>
+              </div>
+            ))}
           </div>
         </section>
 
